@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CaNiAr Ferraille SAC</title>
+    <link rel="icon" href= "https://github.com/CANIAR2024/CANIAR/blob/main/Group%2014.png" type="image/png">
+    <style>
+        body {
+            font-family: 'Bebas Neue', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            padding: 10px;
+            position: relative;
+        }
+        header .logo {
+            height: 100px;
+        }
+        header .menu {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        header .menu a {
+            color: #000;
+            text-decoration: none;
+            margin: 0 10px;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.5s ease, font-size 0.5s ease;
+            font-weight: bold;
+        }
+        header .menu a:hover {
+            background-color: #4860e4;
+            color: white;
+            font-size: 25px; /* Tamaño de letra al hacer hover */
+        }
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            height: 100vh;
+            text-align: center;
+            color: #fff;
+            overflow: hidden;
+        }
+        main .welcome {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            text-align: center;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+        main .welcome h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            white-space: nowrap;
+        }
+        main .welcome p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            white-space: nowrap;
+        }
+        main .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            background-image: url("ruta/a/tu/imagen.jpg");
+            background-position: center;
+            background-size: cover;
+            filter: brightness(50%);
+        }
+        nav {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #000;
+            padding: 20px;
+            text-align: center;
+            letter-spacing: 1em; /* Espacio entre las palabras */
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+        nav a {
+            color: #000;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #37a6c2;
+            color: #fff;
+        }
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        section {
+            background-color: #f7f7f7;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 00 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+        }
+        section:nth-child(even) {
+            flex-direction: row-reverse;
+            background-color: #d5ffff; /* Cambia este color para cada sección par */
+        }
+        section:nth-child(odd) {
+            background-color: #f9fcd9; /* Cambia este color para cada sección impar */
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', Arial, sans-serif;
+            color: #000000;
+            margin-bottom: 10px;
+        }
+        p {
+            margin-bottom: 20px;
+        }
+        .campo-con-imagen img {
+            width: 100%; /* Hace que la imagen abarque todo el ancho */
+        }
+        .logo-sobre-imagen {
+            position: relative;
+            width: 100%;
+        }
+        .logo-sobre-imagen img.logo {
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            transform: translate(-50%, -50%);
+        }
+        p, h2, h3, h4, h5, h6{
+            margin: 100px; /* Agrega 20px de margen a la derecha y izquierda */
+        }
+        p{
+            font-size: 20px;
+        }
+        p1{
+            font-size: 30px;
+        }
+        h1, h2, h3, h4, h5, h6{
+            font-size: 50px;
+            font-weight: bold;
+        }
+        .contact-list {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 10px;
+        }
+        .contact-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        .contact-info i {
+            margin-right: 5px;
+        }
+        .contact-info p {
+            margin: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .col-md-6 {
+            flex: 0 0 48%;
+        }
+        h2 {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: justify;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        p {
+            text-align: justify;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img class="logo" src="C:\Users\Developer\OneDrive\Escritorio\CANIAR\Nosotros-removebg-preview.png" alt="Logo de CaNiAr Ferraille SAC">
+        <div class="menu">
+            <a href="#inicio">Inicio</a>
+            <a href="#acerca">Acerca de</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#contacto">Contacto</a>
+            <a href="GALERIA.html">Galería</a>
+        </div>
+    </header>
+    <main>
+        <div style="position: relative; text-align: left;">
+            <img src="shutterstock_339705626.png" alt="Caniar" style="width: 100%;">
+            <div style="position: absolute; top: 50%; left: 40%; transform: translate(-50%, -50%); color: rgb(0, 0, 0); text-align: left;">
+                <h1>Nos ocupamos hoy, para tener un mañana.</h1>
+                <p1>El reciclaje es garantía de un futuro mejor.</p1>
+            </div>
+        </div>
+    </main>
+    <section id="acerca" class="campo-con-imagen">
+        <img src="C:\Users\Developer\OneDrive\Escritorio\CANIAR\shutterstock_tamaño_editado_1244531674.jpg" alt="Imagen del campo">
+        <div>
+            <h2>¿Quiénes somos?</h2>
+            <p>Somos una empresa dedicada a incrementar el valor agregado a la industria, con relación al manejo seguro de residuos de alta eficiencia, como son los residuos de chatarra metálica. En ese sentido, contamos con las habilitaciones administrativas emitidas por las autoridades gubernamentales nacionales que nos facultan a la comercialización y gestión de este tipo de residuos.</p>
+        </div>
+    </section>
+    <section id="¿Que Hacemos?" class="campo-con-imagen">
+        <img src="C:\Users\Developer\OneDrive\Escritorio\CANIAR\shutterstock_tamaño_editado_340034408.jpg" alt="Imagen del campo">
+        <div>
+            <h2>¿Qué Hacemos?</h2>
+            <p>Nos dedicamos a la compra y venta de chatarra de diversos residuos metálicos a diferentes empresas e industrias. Brindamos servicios de recolección, transporte y comercialización de residuos metálicos no peligrosos, como son las chatarras aleadas de alto valor con aleaciones de cromo, níquel, molibdeno, tungsteno, entre otros metales.</p>
+        </div>
+    </section>
+    <section id="servicios" class="campo-con-imagen">
+        <img src="C:\Users\Developer\OneDrive\Escritorio\CANIAR\shutterstock_tamaño_editado_2136134145.jpg" alt="Imagen del campo">
+        <div>
+            <h2>¿Nuestros principales PROCESOS?</h2>
+            <p>CANIAR Ferraille SAC, no somete los residuos que adquiere en el mercado nacional a ningún
+                proceso químico o realiza sobre los residuos metálicos algún tratamiento que pudiera generar
+                algún impacto ambiental en el Perú. Nuestro objetivo comercial es la exportación de la
+                chatarra metálica para ser sometida a procesos de reutilización en el exterior y sea utilizada
+                como materia prima, siendo nuestros procesos de orden físico: apilamiento, limpieza,
+                consolidación de materiales.</p>
+        </div>
+    </section>
+    <section id="contacto" class="campo-con-imagen">
+        <h2>Contáctanos</h2>
+        <ul class="contact-list">
+          <li class="contact-info">
+            <i class="fas fa-envelope"></i>
+            <p>cg@caniarferraille.com</p>
+          </li>
+          <li class="contact-info">
+            <i class="fas fa-envelope"></i>
+            <p>ca@caniarferraille.com</p>
+          </li>
+          <li class="contact-info">
+            <i class="fas fa-envelope"></i>
+            <p>cga@caniarferraille.com</p>
+          </li>
+          <li class="contact-info">
+            <i class="fas fa-phone"></i>
+            <p>+51 976.223.367</p>
+          </li>
+          <li class="contact-info">
+            <i class="fas fa-phone"></i>
+            <p>+51 933.097.340</p>
+          </li>
+          <li class="contact-info">
+            <i class="fas fa-home"></i>
+            <p>Mz. I7, Lote 03, Urb. Zona Industrial de Ventanilla, Ventanilla, Callao - Lima.</p>
+          </li>
+        </ul>
+ 
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    </section>
+    <section id="permisos" class="campo-con-imagen">
+        <h2>Permisos</h2>
+        <ul>
+          <li>
+            <p>INFORME N° 02240-2023-MINAM/VMGA/DGGRS/DEAA <a href="file:///C:/Users/Developer/OneDrive/Escritorio/CANIAR/INFORME%20N%C2%B0%2002240-2023-MINAMVMGADGGRSDEAA.pdf">aquí</a>.</p>
+          </li>
+          <li>
+            <p>REGISTRO AUTORITATIVO DE EMPRESA OPERADORA DE RESIDUOS SÓLIDOS <a href="C:\Users\Developer\OneDrive\Escritorio\CANIAR\Registro Autoritativo de Empresa Operadora de Residuos Sólidos EO-RS- 00239-2023-MINAMVMGADGGRS.pdf">aquí</a>.</p>
+          </li>
+        </ul>
+      </section>
+    <footer>
+        <p>© 2024 CaNiAr Ferraille SAC - Todos los derechos reservados</p>
+    </footer>
+</body>
+</html>

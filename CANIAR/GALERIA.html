@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Fotos</title>
+    <style>
+      header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            padding: 10px;
+            position: relative;
+        }
+        header .logo {
+            height: 100px;
+        }
+        header .menu {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        header .menu a {
+            color: #000;
+            text-decoration: none;
+            margin: 0 10px;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.5s ease, font-size 0.5s ease;
+            font-weight: bold;
+        }
+        header .menu a:hover {
+            background-color: #4860e4;
+            color: white;
+            font-size: 25px; /* Tamaño de letra al hacer hover */
+        }
+        body {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          background-color: #f0f0f0;
+          margin: 0;
+          overflow: hidden; /* Agrega esta línea para ocultar el scroll */
+          font-family: 'Bebas Neue', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, sans-serif;
+        }
+        .gallery-container {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          max-width: 50%; /* Elimina el máximo de ancho */
+        }
+        .gallery-container img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover; /* Hace que la imagen cubra todo el contenedor */
+          display: none;
+        }
+        .gallery-container img.active {
+          display: block;
+        }
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            color: #333;
+            background-color: rgba(255, 255, 255, 0.7);
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 10;
+        }
+        .arrow.left {
+            left: 10px;
+        }
+        .arrow.right {
+            right: 10px;
+        }
+    </style>
+</head>
+<header>
+  <img class="logo" src="C:\Users\Developer\OneDrive\Escritorio\CANIAR\Nosotros-removebg-preview.png" alt="Logo de CaNiAr Ferraille SAC">
+  <div class="menu">
+      <a href="CANIAR.html">Inicio</a>
+      <a href="GALERIA.html">Galería</a>
+  </div>
+</header>
+<body>
+    <div class="gallery-container">
+        <button class="arrow left" onclick="prevImage()">&#9664;</button>
+        <img src="C:\Users\Developer\OneDrive\Escritorio\CANIAR\Galería1.jpg" class="active" alt="Foto 1">
+        <img src="C:\Users\Developer\OneDrive\Escritorio\CANIAR\Galería2.jpg" alt="Foto 2">
+        <img src="C:\Users\Developer\OneDrive\Escritorio\CANIAR\Galería3.jpg" alt="Foto 3">
+        <img src="C:\Users\Developer\OneDrive\Escritorio\CANIAR\Galería4.jpg" alt="Foto 4">
+        <img src="C:\Users\Developer\OneDrive\Escritorio\CANIAR\Galería5.jpg" alt="Foto 5">
+        <img src="C:\Users\Developer\OneDrive\Escritorio\CANIAR\Galería6.jpg" alt="Foto 6">
+        <img src="C:\Users\Developer\OneDrive\Escritorio\CANIAR\Galería7.jpg" alt="Foto 7">
+        <img src="C:\Users\Developer\OneDrive\Escritorio\CANIAR\Galería8.jpg" alt="Foto 8">
+        <img src="C:\Users\Developer\OneDrive\Escritorio\CANIAR\Galería9.jpg" alt="Foto 9">
+        <img src="C:\Users\Developer\OneDrive\Escritorio\CANIAR\Galería10.jpg" alt="Foto 10">
+        <img src="C:\Users\Developer\OneDrive\Escritorio\CANIAR\Galería11.jpg" alt="Foto 11">
+        <button class="arrow right" onclick="nextImage()">&#9654;</button>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.gallery-container img');
+
+        function showImage(index) {
+            images.forEach((img, i) => {
+                img.classList.toggle('active', i === index);
+            });
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showImage(currentIndex);
+        }
+    </script>
+</body>
+</html>
